@@ -1,7 +1,5 @@
 package models;
 
-import java.text.MessageFormat;
-
 public class Connexion {
 	private String login;
 	private String password;
