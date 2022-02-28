@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
+import main.DatabaseConnection;
 import models.Connexion;
 
 import javax.swing.JPasswordField;
@@ -26,7 +27,7 @@ public class ConnexionFenetre extends JFrame {
 	private JPasswordField textFieldPassword;
 	
 	private void connectUser(Connexion connect) {
-		
+		DatabaseConnection app = new DatabaseConnection();
 	}
 	
 	public ConnexionFenetre() {
