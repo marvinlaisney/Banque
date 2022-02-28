@@ -13,7 +13,7 @@ public class DatabaseConnection {
     private final String password = "password";
 
     /**
-     * Connect to the Mysql database
+     * Connect to the MySql database
      *
      * @return a Connection object
      */

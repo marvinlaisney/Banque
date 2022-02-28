@@ -86,5 +86,4 @@ public class ConnexionFenetre extends JFrame {
 		lblPassword.setBounds(446, 194, 111, 15);
 		getContentPane().add(lblPassword);
 	}
-
 }
