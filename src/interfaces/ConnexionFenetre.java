@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
 import main.DatabaseConnection;
-import models.Connexion;
+import models.Conseiller;
 
 import javax.swing.JPasswordField;
 import java.awt.Font;
@@ -26,8 +26,9 @@ public class ConnexionFenetre extends JFrame {
 	private JTextField textFieldLogin;
 	private JPasswordField textFieldPassword;
 	
-	private void connectUser(Connexion connect) {
+	private void connectUser(Conseiller user) {
 		DatabaseConnection app = new DatabaseConnection();
+		app.connect();
 	}
 	
 	public ConnexionFenetre() {
@@ -59,8 +60,8 @@ public class ConnexionFenetre extends JFrame {
 		JButton btnConnexion = new JButton("Connexion");
 		btnConnexion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Connexion connect = new Connexion(textFieldLogin.getText(), String.valueOf(textFieldPassword.getPassword()));
-				connectUser(connect);
+				Conseiller user = new Conseiller(textFieldLogin.getText(), String.valueOf(textFieldPassword.getPassword()));
+				connectUser(user);
 			}
 		});
 		btnConnexion.setForeground(Color.WHITE);

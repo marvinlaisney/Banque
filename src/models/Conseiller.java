@@ -1,10 +1,12 @@
 package models;
 
-public class Connexion {
+import java.sql.ResultSet;
+
+public class Conseiller {
 	private String login;
 	private String password;
 	
-	public Connexion(String login, String password) {
+	public Conseiller(String login, String password) {
 		this.login = login;
 		this.password = password;
 	}
@@ -24,5 +26,8 @@ public class Connexion {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	public Conseiller serialize(ResultSet resultQuery) {
+		return null;
+	}
 }

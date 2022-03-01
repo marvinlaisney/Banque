@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DatabaseConnection {
 
-    private final String url = "jdbc:mysql://localhost:3306/banque";
+    private final String url = "jdbc:mysql://localhost:3306/societe_epargne";
     private final String user = "root";
     private final String password = "password";
 
@@ -28,30 +28,31 @@ public class DatabaseConnection {
 
         return conn;
     }
-	public static void executeQuery(String query, Connection conn) {
-		try (Statement stmt = conn.createStatement()) {
-			ResultSet rs = stmt.executeQuery(query);
-			
-			if (rs.isBeforeFirst()) {  // Le curseur est-il avant la première ligne ? Sinon pas de données
-				while (rs.next()) {
-					ResultSetMetaData rsmd = rs.getMetaData();
-					int columnsNumber = rsmd.getColumnCount();
-
-					for (int i = 1; i <= columnsNumber; i++) {
-						if (i > 1) System.out.print(",  ");
-						String columnValue = rs.getString(i);
-						System.out.print(columnValue + " " + rsmd.getColumnName(i));
-					}
-					System.out.println("");
-				}
-			}else {
-				System.out.println("\nAucune donnée n'a été trouvé.");
-			}
-			
-			rs.close();
-		}
-		catch (SQLException e) {
-			System.out.println(e);
-		}
-	}
+    
+//	public static void executeQuery(String query, Connection conn) {
+//		try (Statement stmt = conn.createStatement()) {
+//			ResultSet rs = stmt.executeQuery(query);
+//			
+//			if (rs.isBeforeFirst()) {  // Le curseur est-il avant la première ligne ? Sinon pas de données
+//				while (rs.next()) {
+//					ResultSetMetaData rsmd = rs.getMetaData();
+//					int columnsNumber = rsmd.getColumnCount();
+//
+//					for (int i = 1; i <= columnsNumber; i++) {
+//						if (i > 1) System.out.print(",  ");
+//						String columnValue = rs.getString(i);
+//						System.out.print(columnValue + " " + rsmd.getColumnName(i));
+//					}
+//					System.out.println("");
+//				}
+//			}else {
+//				System.out.println("\nAucune donnée n'a été trouvé.");
+//			}
+//			
+//			rs.close();
+//		}
+//		catch (SQLException e) {
+//			System.out.println(e);
+//		}
+//	}
 }
